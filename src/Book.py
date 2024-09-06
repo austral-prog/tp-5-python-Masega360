@@ -1,6 +1,3 @@
-# from typing import Self
-
-
 class Book:
     def __init__(self, isbn, title, author, available=True, checkout_num=0):
         self.__isbn = isbn
@@ -27,14 +24,17 @@ class Book:
 
     # Setters
     def set_available(self, available):
-        pass
+        self.__available = available
 
     def increment_checkout_num(self):
-        pass
+        self.__checkout_num += 1
 
     # Utils
-    def __str__(self) -> str:
-        pass
+    def __str__(self):
+        return f"ISBN: {self.__isbn}, Title: {self.__title}, Author: {self.__author}"
 
     def __eq__(self, other):
-        pass
+        if self.__isbn == other.__isbn:
+            return True
+        else:
+            return False
